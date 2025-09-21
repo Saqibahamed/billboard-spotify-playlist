@@ -40,33 +40,83 @@ pip install -r requirements.txt
 ---
 
 ## 🔑 Setup
-- Clone the repository
+1️⃣ Open Project in PyCharm
 
-git clone https://github.com/your-username/billboard-to-spotify.git
-cd billboard-to-spotify
+Launch PyCharm.
 
+Go to File → Open.
 
-- Update .env file inside .venv/ and add your Spotify API credentials:
+Select your project folder (the one containing main.py and Billboard_Scraping.py) and click OK.
 
+2️⃣ Create a Virtual Environment
+
+Go to File → Settings → Project: YourProjectName → Python Interpreter.
+
+Click the gear icon → Add.
+
+Select Virtualenv Environment:
+
+New environment (recommended)
+
+Location: leave default (e.g., .venv)
+
+Base interpreter: choose your Python 3.x installation
+
+Click OK to create the virtual environment.
+
+3️⃣ Install Dependencies
+
+Open Terminal in PyCharm (bottom of IDE).
+
+Run:
+```
+pip install spotipy beautifulsoup4 requests python-dotenv
+```
+
+Or, if you want, you can create a requirements.txt file (with these 4 libraries) and run:
+```
+pip install -r requirements.txt
+```
+
+4️⃣ Set Up .env File
+
+Inside your project, create a folder .venv (if not already there).
+
+Create a file called .env inside .venv/.
+
+Add your Spotify API credentials:
 ```
 CLIENT_ID=your_spotify_client_id
 CLIENT_SECRET=your_spotify_client_secret
 REDIRECT_URL=http://localhost:8888/callback
 ```
-- Get these credentials from the Spotify Developer Dashboard
-- Run the script:
+
+5️⃣ Configure Run in PyCharm
+
+Go to Run → Edit Configurations → + → Python.
+
+Name it: Run Billboard Playlist.
 ```
-python main.py
+Script path: main.py.
 ```
+Python interpreter: select the virtualenv you created.
+
+Working directory: project root.
+
+Click OK.
+
+6️⃣ Run the Project
+
+Click the green Run button (top right) or press Shift + F10.
+
 ---
+## 📌 Usage
 
-📌 Usage
+The program will ask:
 
-When prompted, enter a date in the format:
-
+Which year do you want to travel to? Type the date in this format YYYY-MM-DD:
 ```
-YYYY-MM-DD
-Example: 2000-08-12
+Enter a date, e.g., 2000-08-12.
 ```
 
 The script will:
@@ -83,7 +133,8 @@ Songs not available on Spotify will be skipped automatically.
 
 Make sure your Spotify app is set up correctly in the Developer Dashboard with the same redirect URI.
 
-Playlist will always be public by default (you can modify this in the code).
+Playlist will always be public by default (you can modify this in the code)
+
 ---
 
 ## 🙌 Credits

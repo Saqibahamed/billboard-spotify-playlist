@@ -14,6 +14,16 @@ It combines **BeautifulSoup** for web scraping with the **Spotify Web API** (via
 
 ---
 
+## 📂 Project Structure
+
+```
+├── main.py                # Main script to authenticate with Spotify & create playlist
+├── Billboard_Scraping.py  # Script to scrape Billboard Hot 100 songs
+├── .venv/.env             # Environment file (contains Spotify API credentials)
+├── requirements.txt       # Python dependencies (optional but recommended)
+```
+
+
 ## 🛠️ Requirements
 - Python 3.8+
 - Spotify Developer Account
